@@ -1,0 +1,3 @@
+{{ object.content }}
+{{ object.answer }}
+{{ object.question_emb }}

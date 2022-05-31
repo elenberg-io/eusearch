@@ -1,0 +1,56 @@
+{% extends "search\index.html" %}
+
+{% block content %}
+
+{% if searched %}
+<h4 class="text-center text-muted">You've searched for:</h4>
+<h4 class="text-center display-6 mb-5 text-primary">{{searched}}</h4>
+{% if not_empty_results %}
+<div class="container-fluid mt-5 mb-2">
+    <div class="row">
+        <div class="col">
+            <h4>Top 5 Elasticsearch index search results:</h4>
+        </div>
+        <div class="col">
+            <h4>Top 5 Haystack search results:</h4>
+        </div>
+    </div>
+</div>
+<h6>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <ul class="list-group">
+                    {% for i in results %}
+                    <div class="card-body">
+                        <a class="card-link h-25 font-weight-bold" href="{{i.link}}">{{i.question}}</a>
+                        <h6 class="card-subtitle mt-1 mb-2 text-muted">{{i.title}}</h6>
+                        <p class="card-text mb-2 font-weight-bold">Publication Date: {{i.pubdate}}</p>
+                        <p class="card-text">{{i.answer}}</p>
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <ul class="list-group">
+                    {% for i in results_haystack %}
+                    <div class="card-body">
+                        <a class="card-link h-25 font-weight-bold" href="{{i.link}}">{{i.question}}</a>
+                        <h6 class="card-subtitle mt-1 mb-2 text-muted">{{i.title}}</h6>
+                        <p class="card-text mb-2 font-weight-bold">Publication Date: {{i.pubdate}}</p>
+                        <p class="card-text">{{i.answer}}</p>
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+</h6>
+{% else %}
+<h3 class="display-4 text-center">Your search didn't produce any results, try again!</h3>
+{% endif %}
+{% else %}
+<!-- <h1 class=x`"display-4 text-center">You haven't searched anything yet...</h1> -->
+{% endif %}
+{% endblock %}
