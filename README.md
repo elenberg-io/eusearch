@@ -30,3 +30,7 @@ Use the Django utility manage.py to run the local development server to get the 
 ```python
 python manage.py runserver
 ```
+
+## UI Look & Feel
+
+![Link text Here](staticfiles\search\look_and_feel.jpg)
