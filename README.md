@@ -33,4 +33,4 @@ python manage.py runserver
 
 ## UI Look & Feel
 
-![Link text Here](staticfiles\search\look_and_feel.jpg)
+![Link text Here](staticfiles/search/look_and_feel.jpg)
